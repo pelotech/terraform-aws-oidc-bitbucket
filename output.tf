@@ -1,14 +1,14 @@
 output "iam_role_arns" {
-  description = "Roles that will be assumed by GitHub Action"
+  description = "Roles that will be assumed by Bitbucket"
   value       = values(module.aws_oidc_bitbucket)[*].iam_role_arn
 }
 
-output "github_oidc_provider_arn" {
+output "bitbucket_oidc_provider_arn" {
   description = "oidc provider arn to use for roles/policies"
-  value       = aws_iam_openid_connect_provider.github.arn
+  value       = aws_iam_openid_connect_provider.bitbucket.arn
 }
 
-output "github_oidc_provider_url" {
+output "bitbucket_oidc_provider_url" {
   description = "oidc provider url to use for roles/policies"
-  value       = aws_iam_openid_connect_provider.github.url
+  value       = aws_iam_openid_connect_provider.bitbucket.url
 }
